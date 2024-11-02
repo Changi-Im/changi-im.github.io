@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://changi-im.github.io/sitemap.xml
+Sitemap: https://changi-im.github.io//sitemap.xml
