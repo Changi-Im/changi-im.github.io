@@ -7,7 +7,7 @@ subtitle: Engineer @<a href='https://semiconductor.samsung.com/about-us/business
 profile:
   align: right
   image: icon.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   more_info:
 
 news: true # includes a list of news items
