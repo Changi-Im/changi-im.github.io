@@ -1,14 +1,10 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - Changi-Im
 
-repo_description_lines_max: 2
+repo_description_lines_max: 1
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - Changi-Im/HyperP_MB
+  - Changi-Im/Visible-and-NIR-Image-Fusion
+  - Changi-Im/Development-of-Image-Synthesis-Edge-Device-for-Image-Quality-Improvement
+  - Changi-Im/Smart-Pet-Robot-for-Real-Time-Home-Care-Psychotherapy
