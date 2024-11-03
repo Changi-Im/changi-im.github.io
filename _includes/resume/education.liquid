@@ -17,14 +17,14 @@
               <tr>
                 <td>
                   {% if date %}
-                    <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px"> {{ date }} </span>
+                    <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 125px"> {{ date }} </span>
                   {% endif %}
                 </td>
               </tr>
               {% if content.location %}
                 <tr>
                   <td>
-                    <p class="location">
+                    <p style="font-size: 0.7rem; white-space: nowrap; letter-spacing: -0.5px;">
                       <i class="fa-solid fa-location-dot iconlocation"></i>
                       {{ content.location }}
                     </p>
