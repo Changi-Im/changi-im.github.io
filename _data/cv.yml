@@ -2,18 +2,16 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Changi Im
     - name: Languages
-      value: English, German
+      value: Korean (Native), English (Fluent), Chinese (Basic)
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: B.S. in Electronics Engineering
+      institution: Kyungpook National University, Daegu, South Korea
+      year: February 2024
       description:
         - Description 1.
         - Description 2.
@@ -21,45 +19,34 @@
           contents:
             - Sub-description 1.
             - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Software Engineer
+      institution: Samsung Electronics, System LSI
+      year: March 2024 - Present
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
+        - Working as a software engineer at Audio Solution Group.
+        - title: Summer Intern
           contents:
             - Sub-description 1.
             - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+    - title: Junior Researcher
+      institution: Max Planck Institute for Biological Cybernetics
+      year: August 2023 - December 2023
       description:
         - Description 1.
         - Description 2.
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
+    - title: Undergraduate Researcher
+      institution: Kyungpook National University.
+      year: April 2021 - August 2022
 
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+    - title: Research Intern
+      institution: Electronics and Telecommunications Research Institute (ETRI)
+      year: July 2022 - August 2022
       description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
 
 - title: Open Source Projects
   type: time_table
@@ -82,16 +69,13 @@
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
+    - title: Scenes Understanding.
+    - title: Computer Vision.
+    - title: Signal Processing. 
+    - title: Multimodal Learning. 
+    - title: Hardware-aware Optimization.
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Hobbies:</u> Running, Boxing, Drawing, etc.
