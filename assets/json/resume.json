@@ -45,16 +45,16 @@
         "url": "https://doi.org/10.3390/math11071620"
       },
       {
+        "name": "Real-time Wild Animal Detection and Tracking Method for Incident on the Road",
+        "publisher": "The 3rd Korea Artificial Intelligence Conference",
+        "releaseDate": "2022"
+      },
+      {
         "name": "Tone Image Classification and Weighted Learning for Visible and NIR Image Fusion",
         "publisher": "Entropy",
         "releaseDate": "2022",
         "url": "https://doi.org/10.3390/e24101435"
-      },
-      {
-        "name": "Real-time Wild Animal Detection and Tracking Method for Incident on the Road",
-        "publisher": "The 3rd Korea Artificial Intelligence Conference",
-        "releaseDate": "2022"
-    }
+      }
     ],
     "skills": [
       {
