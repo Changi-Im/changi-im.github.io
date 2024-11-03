@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Engineer @<a href='https://semiconductor.samsung.com/about-us/business-area/system-lsi/'>Samsung Electronics, System LSI</a>.
 
