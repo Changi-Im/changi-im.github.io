@@ -12,12 +12,14 @@
       {
         "name": "Samsung Electronics, System LSI",
         "position": "Software Engineer",
+        "location": "Hwaseong, South Korea",
         "startDate": "2024-03-01",
         "summary": "Working as a software engineer at Audio Solution Group."
       },
       {
         "name": "Max Planck Institute for Biological Cybernetics",
         "position": "Junior Researcher",
+        "location": "Tübingen, Germany",
         "startDate": "2023-08-01",
         "endDate": "2023-12-01",
         "summary": "Worked as an undergraduate research fellow at MPI-BC tSCN."
@@ -25,6 +27,7 @@
       {
         "name": "Kyungpook National University",
         "position": "Undergraduate Researcher",
+        "location": "Daegu, South Korea",
         "startDate": "2021-04-01",
         "endDate": "2023-06-01",
         "summary": "Worked as an undergraduate researcher at Vision & Imaging Lab."
@@ -32,6 +35,7 @@
       {
         "name": "Electronics and Telecommunications Research Institute (ETRI)",
         "position": "Research Intern",
+        "location": "Daegu, South Korea",
         "startDate": "2022-07-01",
         "endDate": "2022-08-31",
         "summary": "Worked as a full-time summer intern researcher at Artificial Intelligence Application Research Section."
