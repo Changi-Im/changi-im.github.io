@@ -4,7 +4,7 @@ title: Smart Pet Robot
 description: 
 img: assets/img/smart_pet_robot/playing.gif
 importance: 1
-category: work
+category: fun
 related_publications: false
 ---
 
@@ -113,8 +113,12 @@ We could improve the speed in the raspberry pi display by reducing color gamut. 
 Look how it got better!
  
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col">
+    </div>
+    <div class="col-6">
         {% include figure.liquid loading="eager" path="assets/img/smart_pet_robot/disp_better.gif" title="disp_better" max-width = "450px" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col">
     </div>
 </div>
 <div class="caption">
