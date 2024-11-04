@@ -12,8 +12,12 @@ Smart Pet Robot was my first group project during my college years. I and my two
 While there were a lot of troubles during the project, our competiton ended with a 4th place win! I'd like to briefly leave this meaningful and thankful project here even though it has already taken 2 years.
  
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/smart_pet_robot/prototype.jpg" title="prototype" class="img-fluid rounded z-depth-1" %}
+    <div class="col">
+    </div>
+    <div class="col-6">
+        {% include figure.liquid loading="eager" path="assets/img/smart_pet_robot/prototype.jpg" title="prototype" max-width = "450px" class="img-fluid rounded z-depth-1" %}
+    </div>
+    <div class="col">
     </div>
 </div>
 <div class="caption">
@@ -110,7 +114,7 @@ Look how it got better!
  
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/smart_pet_robot/disp_better.gif" title="disp_better" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/smart_pet_robot/disp_better.gif" title="disp_better" max-width = "450px" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
