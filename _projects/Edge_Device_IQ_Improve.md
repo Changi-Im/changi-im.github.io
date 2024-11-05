@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Image Quality Improvement Through Image Synthesis on Edge Device
-description: 
+title: Lightweight Image Fusion
+description: A project to implement CNN solution on the edge device
 img: assets/img/edge_device_IQ/method.png
 importance: 1
 category: work
