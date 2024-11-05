@@ -8,7 +8,7 @@ category: fun
 related_publications: false
 ---
 
-Smart Pet Robot was my first group project during my college years. I and my two other friends made this robot to participate in a competition which is called Hanium in South Korea.  
+Smart Pet Robot was my first group project during my college years. Me and my two other friends made this robot to participate in a competition which is called Hanium in South Korea.  
 While there were a lot of troubles during the project, our competiton ended with a 4th place win! I'd like to briefly leave this meaningful and thankful project here even though it has already taken 2 years.
 
 <div class="row">
@@ -24,7 +24,7 @@ While there were a lot of troubles during the project, our competiton ended with
     This was our initial robot. She seems little bit poor but cute. 
 </div>
 
-I and my friends firstly downloaded 3D blueprint from the internet to make robot's appearance.
+Me and my friends firstly downloaded 3D blueprint from the internet to make robot's appearance.
 I remember the blueprint was from a youtube video that shows eye-tracking something (surprisingly, I can still find the video easily: <a href = "https://www.youtube.com/watch?v=C8XMgwBsd7w"> Affective Robot-Eye tracking test </a>).
 We thought it would be cool if a robot has an eye-tracking system. However, as you can see the above picture, the robot looked kinda creepy at some point. So, we decided to change the appearance with a new design.
 
@@ -151,4 +151,4 @@ She wags her tail when we smile! I remember me and my friends were screaming whe
 After submitting the robot, we advanced to the finals where we had to demonstrate the Smart Pet Robot in person.
 But, unfortunately, some functions didn't work properly during the demo, so we ended up in 4th place ;). 
 
-Nevertheless, I think this is the most meaningful project that I've done because my friends and I were able to grow further and build good memories through this project!
+Nevertheless, I think this is the most meaningful project that I've done because my friends and me were able to grow further and build good memories through this project!
