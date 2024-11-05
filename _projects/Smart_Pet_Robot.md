@@ -8,9 +8,9 @@ category: fun
 related_publications: false
 ---
 
-Smart Pet Robot was my first group project during my college years. I and my two other friends made this robot to participate in a competition which is called Hanium in South Korea.
+Smart Pet Robot was my first group project during my college years. I and my two other friends made this robot to participate in a competition which is called Hanium in South Korea.  
 While there were a lot of troubles during the project, our competiton ended with a 4th place win! I'd like to briefly leave this meaningful and thankful project here even though it has already taken 2 years.
- 
+
 <div class="row">
     <div class="col">
     </div>
@@ -27,7 +27,7 @@ While there were a lot of troubles during the project, our competiton ended with
 I and my friends firstly downloaded 3D blueprint from the internet to make robot's appearance.
 I remember the blueprint was from a youtube video that shows eye-tracking something (surprisingly, I can still find the video easily: <a href = "https://www.youtube.com/watch?v=C8XMgwBsd7w"> Affective Robot-Eye tracking test </a>).
 We thought it would be cool if a robot has an eye-tracking system. However, as you can see the above picture, the robot looked kinda creepy at some point. So, we decided to change the appearance with a new design.
- 
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/smart_pet_robot/design.jpg" title="design" class="img-fluid rounded z-depth-1" %}
@@ -41,10 +41,8 @@ We thought it would be cool if a robot has an eye-tracking system. However, as y
 </div>
 
 We discussed to make a perfect robot and finally sketched above picture. New design included LCD display to show emotion instead of eye-tracking.
-To be honest, I felt sad because I liked the little eye movements and I somehow completed the function. But it is what it is. 
+To be honest, I felt sad because I liked the little eye movements and I somehow completed the function. But it is what it is.
 We used a raspberry pi and 3.5 inch raspberry LCD display. The below code allows us to use the LCD on the raspberry pi.
-
-{% raw %}
 
 ```xml
 sudo rm -rf LCD-show
@@ -54,11 +52,9 @@ cd LCD-show/
 sudo ./LCD35-show
 ```
 
-{% endraw %}
-
 To put some facial expression video in the LCD, we downloaded animation from youtube (<a href="https://www.youtube.com/watch?v=S79FH99aQWk">Robot Eye Expressions</a>).
 The robot expression video was cut with blinking, smiling, and heart eyes. 
-Under the normal state, it shows the blinking video, when the robot detects smile of user, it provides the smiling and heart eyes videos.  
+Under the normal state, it shows the blinking video, when the robot detects smile of user, it provides the smiling and heart eyes videos.
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
@@ -76,8 +72,6 @@ Under the normal state, it shows the blinking video, when the robot detects smil
 </div>
 
 We could display each video at each condition through the code below.
- 
-{% raw %}
 
 ```python
 Vid = cv2.VideoCapture('./smart_bot_expression/blink.mp4')
@@ -90,12 +84,10 @@ while Vid.isOpened():
         elif flag == 1:
             Vid = cv2.VideoCapture('./smart_bot_expression/heart.mp4')
             flag = 0
-```  
+```
 
-{% endraw %}
+When the robot detects your smile, it alternates between a smile and a heart face. The below videos are the results what we did!
 
-When the robot detects your smile, it alternates between a smile and a heart face. The below videos are the results what we did! 
- 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/smart_pet_robot/test_comp.gif" title="test_comp" class="img-fluid rounded z-depth-1" %}
@@ -109,9 +101,9 @@ When the robot detects your smile, it alternates between a smile and a heart fac
 </div>
 
 However, as you can see in the last video, the raspberry pi display shows quite slower speed than the computer monitor.
-We could improve the speed in the raspberry pi display by reducing color gamut. This can be easily done by following this insturction (<a href="https://www.youtube.com/watch?v=cQvC-UI2vQY">Increased Frame Rate on a cheap Raspberry Pi LCD - Make Your SPI Display Playable</a>)
+We could improve the speed in the raspberry pi display by reducing color gamut. This can be easily done by following this insturction (<a href="https://www.youtube.com/watch?v=cQvC-UI2vQY">Increased Frame Rate on a cheap Raspberry Pi LCD - Make Your SPI Display Playable</a>).
 Look how it got better!
- 
+
 <div class="row">
     <div class="col">
     </div>
@@ -127,7 +119,7 @@ Look how it got better!
 
 As you can see the above video, now it has more higher fps.
 The next step is making a 3D drawing file according to our new design sketch.
- 
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/smart_pet_robot/3D_design.png" title="3D_design" class="img-fluid rounded z-depth-1" %}
@@ -145,7 +137,7 @@ The next step is making a 3D drawing file according to our new design sketch.
 
 We printed the blueprint on 3D printer and dyed. I remember we had to dye the robot again and again to make it as much white as possible and that was really boring.
 After that, we added more functions such as motor drive, Google Assistant, wireless communication, etc., and finally created the Smart Pet Robot!
- 
+
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.liquid loading="eager" path="assets/img/smart_pet_robot/playing.gif" title="playing" class="img-fluid rounded z-depth-1" %}
