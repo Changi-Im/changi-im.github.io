@@ -3,8 +3,8 @@ layout: page
 title: Smart Pet Robot
 description: Smart pet robot for real-time home care psychotherapy
 img: assets/img/smart_pet_robot/playing.gif
-importance: 1
-category: fun
+importance: 2
+category: 
 related_publications: false
 ---
 
