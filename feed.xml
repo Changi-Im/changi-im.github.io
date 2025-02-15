@@ -1,1 +1,46 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://changi-im.github.io//feed.xml" rel="self" type="application/atom+xml"/><link href="https://changi-im.github.io//" rel="alternate" type="text/html" hreflang="en"/><updated>2025-02-15T06:25:54+00:00</updated><id>https://changi-im.github.io//feed.xml</id><title type="html">Hi, I’m Changi</title><subtitle>Anything and everything all at once. </subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://changi-im.github.io//feed.xml" rel="self" type="application/atom+xml"/><link href="https://changi-im.github.io//" rel="alternate" type="text/html" hreflang="en"/><updated>2025-02-15T06:39:19+00:00</updated><id>https://changi-im.github.io//feed.xml</id><title type="html">Hi, I’m Changi</title><subtitle>Anything and everything all at once. </subtitle><entry><title type="html">How to design ReLu using bitwise operations?</title><link href="https://changi-im.github.io//blog/2024/relu-optimization/" rel="alternate" type="text/html" title="How to design ReLu using bitwise operations?"/><published>2024-11-26T14:00:00+00:00</published><updated>2024-11-26T14:00:00+00:00</updated><id>https://changi-im.github.io//blog/2024/relu-optimization</id><content type="html" xml:base="https://changi-im.github.io//blog/2024/relu-optimization/"><![CDATA[<p>We can simply design ReLu in C as below:</p> <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">relu</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> 
+	   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">else</span>
+	   <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>However, from a hardware perspective, this type of coding can be very inefficient. Imagine that this type of code is compiled and implemented in hardware via an ISA. Each instruction implemented in an assembler has a structure that takes several clocks to complete instead of just one clock. This structure also allows multiple instructions to be executed simultaneously to increase efficiency.</p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/design_relu/pipeline-480.webp 480w,/assets/img/design_relu/pipeline-800.webp 800w,/assets/img/design_relu/pipeline-1400.webp 1400w," type="image/webp" sizes="95vw"/> <img src="/assets/img/design_relu/pipeline.jpg" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="pipeline" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <div class="caption"> ARM 3-stage pipeline operation </div> <p>In the pipeline above, we can see that the decode process of the STR instruction and another ADD instruction are performed at the same time that the ADD instruction is entered and the execute process is being performed. With this type of pipeline, we can expect low CPI (Clock Cycles per Instruction).</p> <p>However, this pipeline is difficult to apply to code that has branches that move memory locations, such as the previous code. Therefore, it is advantageous to write hardware-optimized code that uses as few branching statements as possible. So how do we create ReLu code that is branch-free?</p> <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">arm_relu_q7</span><span class="p">(</span><span class="kt">int8_t</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">size</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="p">...</span>
+    <span class="cm">/* Run the following code for M cores with DSP extension */</span>
+
+    <span class="kt">uint16_t</span> <span class="n">i</span> <span class="o">=</span> <span class="n">size</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kt">int8_t</span> <span class="o">*</span><span class="n">input</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+    <span class="kt">int8_t</span> <span class="o">*</span><span class="n">output</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+    <span class="kt">int32_t</span> <span class="n">in</span><span class="p">;</span>
+    <span class="kt">int32_t</span> <span class="n">buf</span><span class="p">;</span>
+    <span class="kt">int32_t</span> <span class="n">mask</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">in</span> <span class="o">=</span> <span class="n">arm_nn_read_s8x4_ia</span><span class="p">((</span><span class="k">const</span> <span class="kt">int8_t</span> <span class="o">**</span><span class="p">)</span><span class="o">&amp;</span><span class="n">input</span><span class="p">);</span>
+
+        <span class="cm">/* extract the first bit */</span>
+        <span class="n">buf</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int32_t</span><span class="p">)</span><span class="n">ROR</span><span class="p">((</span><span class="kt">uint32_t</span><span class="p">)</span><span class="n">in</span> <span class="o">&amp;</span> <span class="mh">0x80808080</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+
+        <span class="cm">/* if MSB=1, mask will be 0xFF, 0x0 otherwise */</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">QSUB8</span><span class="p">(</span><span class="mh">0x00000000</span><span class="p">,</span> <span class="n">buf</span><span class="p">);</span>
+
+        <span class="n">arm_nn_write_s8x4_ia</span><span class="p">(</span><span class="o">&amp;</span><span class="n">output</span><span class="p">,</span> <span class="n">in</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">mask</span><span class="p">));</span>
+
+        <span class="n">i</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">i</span> <span class="o">=</span> <span class="n">size</span> <span class="o">&amp;</span> <span class="mh">0x3</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">*</span><span class="n">input</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="o">*</span><span class="n">input</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">input</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">i</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+ <span class="p">...</span>
+</code></pre></div></div> <p>The above code is part of the arm_relu_q7 function in the CMSIS-NN Library provided by ARM. In a nutshell, it takes 8 bits of data, 4 by 4, from the arm_nn_read_s8x4_ia function. It then performs an and operation with the value 0x80808080 and shifts the resulting value 7 bits to the right. 0x80 is 0b10000000, so when the input is negative, it will become 0b00000001 after shifting 7 bits, and when the input is positive, it will become 0b00000000. After the bit shift, we subtract the value of the shifted bit from 0x00000000. We can calculate the mask like 0b00000000 minus 0b00000001 to get 0b11111111 when the input is negative, and 0b00000000 minus 0b00000000 to get 0b00000000 when the input is positive. Finally, if we do the AND operation on the initial input and the mask with the NOT operation, we get ReLu function that returns 0 if the input is negative or returns same value if the input is positive.</p> <p>By using bitwise operations in this way, we can write hardware-optimized code without branching.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Optimize ReLu from a hardware perspective]]></summary></entry></feed>
