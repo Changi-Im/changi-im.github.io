@@ -5,7 +5,7 @@ date: 2024-11-26 14:00:00
 description: Optimize ReLu from a hardware perspective
 tags:
 categories:
-thumbnail: assets/img/post/design_relu/pipeline.jpg
+thumbnail: assets/img/design_relu/pipeline.jpg
 ---
 
 We can simply design ReLu in C as below:
