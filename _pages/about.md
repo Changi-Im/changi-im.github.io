@@ -9,8 +9,9 @@ profile:
   image: icon.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
-    <p>Location: Hwaseong, South Korea | Email: imchmcgi250@gmail.com</p>
-    <p><\p>
+    <p>Location: Hwaseong, South Korea</p>
+    <p>Email: imchmcgi250@gmail.com</p>
+    <p></p>
 
 news: true # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
