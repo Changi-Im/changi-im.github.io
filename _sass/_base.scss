@@ -510,12 +510,8 @@ footer.sticky-bottom {
 // Blog
 
 .header-bar {
-  // border-bottom: none; // remove the divider line for a cleaner look
   border-bottom: 1px solid var(--global-divider-color);
-  text-align: center;
-  // padding-top: 0.5rem;
   padding-bottom: 1rem;
-
   h1 {
     color: var(--global-theme-color);
     font-size: 2rem; // much smaller than 5rem
