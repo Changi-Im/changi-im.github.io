@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Engineer @<a href='https://semiconductor.samsung.com/about-us/business-area/system-lsi/'>Samsung Electronics, System LSI</a>.
+subtitle: 
 
 profile:
   align: right
@@ -15,6 +15,8 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Welcome to my homepage!  
+Hi, I'm Changi! So happy to have you here.
 
-I'm currently working as a software engineer at Samsung Electronics. My research interests focus on how machines can better perceive the world and enrich our lives. I believe we can tackle complex challenges by enabling machines to understand various modalities.
+I am a Software Engineer at <a href='https://semiconductor.samsung.com/about-us/business-area/system-lsi/'>Samsung Electronics</a>, where I work on audio solutions within the System LSI business. My research interests focus on how machines can better perceive the world through multimodal understanding, including audio and visual signals, to enrich human life.
+
+Prior to joining Samsung, I completed research internships at the <a href='https://www.kyb.tuebingen.mpg.de/en'>Max Planck Institute</a> and <a href='https://www.etri.re.kr/eng/main/main.etri'>ETRI</a>, and earned B.S. degree in Electronics Engineering from Kyungpook National University in South Korea, where I worked on image and signal processing research.
