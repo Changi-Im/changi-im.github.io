@@ -76,10 +76,20 @@ void arm_relu_q7(int8_t *data, uint16_t size)
  ...
 ```
 
-The above code is part of the arm_relu_q7 function in the CMSIS-NN Library provided by ARM.
-In a nutshell, it takes 8 bits of data, 4 by 4, from the arm_nn_read_s8x4_ia function.
-It then performs an and operation with the value 0x80808080 and shifts the resulting value 7 bits to the right. 0x80 is 0b10000000, so when the input is negative, it will become 0b00000001 after shifting 7 bits, and when the input is positive, it will become 0b00000000.
-After the bit shift, we subtract the value of the shifted bit from 0x00000000. We can calculate the mask like 0b00000000 minus 0b00000001 to get 0b11111111 when the input is negative, and 0b00000000 minus 0b00000000 to get 0b00000000 when the input is positive.
-Finally, if we do the AND operation on the initial input and the mask with the NOT operation, we get ReLu function that returns 0 if the input is negative or returns same value if the input is positive.
+The code above is part of the `arm_relu_q7` function in the **CMSIS-NN** Library provided by **ARM**.
+In a nutshell, it takes 8 bits of data, 4 by 4, from the `arm_nn_read_s8x4_ia` function.
+Each 32-bit chunk is then ANDed with the constant `0x80808080` and right-shifted by 7 bits to extract the sign bit of each 8-bit value.
  
-By using bitwise operations in this way, we can write hardware-optimized code without branching.
+Specifically, consider `0x80` in binary: `0b10000000`. This represents a negative number in 8-bit signed format. After shifting it 7 bits to the right, it becomes `0b00000001`. In other words, the sign bit is effectively moved into the least significant bit position.
+ 
+Next, we subtract this shifted value from `0x00000000`, creating a mask based on the sign:
+
+- For a negative input: `0b00000000` - `0b00000001` = `0b11111111`
+- For a positive input: `0b00000000` - `0b00000000` = `0b00000000`
+ 
+Finally, applying a bitwise AND between the bitwise NOT of the mask and the original input effectively implements the ReLU function:
+
+- If the input is negative → result becomes 0
+- If the input is positive → result remains unchanged
+
+By using bitwise operations in this way, we can implement the ReLU function efficiently without any conditional branching, which is particularly useful for hardware-optimized and low-latency inference.
