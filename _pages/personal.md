@@ -6,7 +6,7 @@ nav: true
 nav_order: 5
 ---
 
-## ✏️ Doodling {#drawing}
+## ✏️ Doodling {#doodling}
 
 <div class="gallery-grid">
 

@@ -23,4 +23,4 @@ I am a Software Engineer at <a href='https://semiconductor.samsung.com/about-us/
 
 Prior to joining Samsung, I completed research internships at the <a href='https://www.kyb.tuebingen.mpg.de/en'>Max Planck Institute</a> and <a href='https://www.etri.re.kr/eng/main/main.etri'>ETRI</a>, and earned B.S. degree in Electronics Engineering from Kyungpook National University in South Korea, where I worked on image and signal processing research.
 
-Apart from work, I enjoy [drawing](/personal/#drawing), boxing, and traveling.
+Apart from work, I enjoy [doodling](/personal/#drawing), boxing, and traveling.
