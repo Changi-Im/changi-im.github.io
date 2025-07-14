@@ -3,12 +3,13 @@ layout: post
 title: Harmonic in speech processing
 date: 2025-03-12 14:00:00
 description: Understand the concept of harmonics in audio
+math: true
 tags:
 categories:
 thumbnail: assets/img/harmonic_audio/spectrogram.png
 ---
 
-When I started working in the audio group, I often heard people mention the term **harmonic** in the context of speech processing. Something like *the harmonics become stronger when this solution is applied* or *the lower harmonics are emphasized were commonly used*. At first, I wasn’t sure what they meant.
+When I started working in the audio group, I often heard people mention the term **harmonic** in the context of speech processing. Something like *the harmonics become stronger when this solution is applied* or *the lower harmonics are emphasized were*. At first, I wasn’t sure what they meant.
 
 According to Wikipedia, a harmonic is defined as "*a sinusoidal wave with a frequency that is a positive integer multiple of the fundamental frequency of a periodic signal*".
 In other words, harmonics are a collection of frequency components that include the fundamental frequency and its integer multiples. The fundamental frequency is the lowest frequency of a periodic waveform, and the human voice is, essentially, a complex periodic waveform.
@@ -16,7 +17,7 @@ In other words, harmonics are a collection of frequency components that include 
 As we know from the Fourier series, any periodic signal can be decomposed into a sum of sinusoidal signals. The formula is typically written as:  
 $$
 \begin{align}
-x(t) = \sum_{n=\infty}^{\infty}{c_ne^{j2{\pi}nF_0t}}
+x(t) = \sum_{n=-\infty}^{\infty}{c_ne^{j2{\pi}nF_0t}}
 \end{align}
 $$
 

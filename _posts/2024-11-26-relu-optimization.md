@@ -31,7 +31,7 @@ Each instruction implemented in an assembler has a structure that takes several 
     ARM 3-stage pipeline operation
 </div>
 
-In the pipeline above, we can see that the decode process of the STR instruction and another ADD instruction are performed at the same time that the ADD instruction is entered and the execute process is being performed. With this type of pipeline, we can expect low CPI (Clock Cycles per Instruction).
+In the pipeline above, we can see that the decode process of the STR instruction and another ADD instruction are performed at the same time that the ADD instruction is entered and the execute process is being performed. With this type of pipeline, we can expect low Clock Cycles per Instruction (CPI).
  
 However, this pipeline is difficult to apply to code that has branches that move memory locations, such as the previous code. Therefore, it is advantageous to write hardware-optimized code that uses as few branching statements as possible. So how do we create ReLu code that is branch-free?
 ```c++
