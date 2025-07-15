@@ -14,12 +14,6 @@ layout: default
     <p class="post-description">{{ page.description }}</p>
   </header>
   
-  {% if page.img_raw %}
-    <div class="post-image">
-      <img src="{{ page.img_raw }}" alt="{{ page.title }} GIF preview" style="max-width: 100%; height: auto;">
-    </div>
-  {% endif %}
-
   <article>
     {{ content }}
   </article>

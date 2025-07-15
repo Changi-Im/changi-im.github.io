@@ -268,6 +268,12 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+      
+  - scope:
+      path: "assets/img"
+      type: "image/gif"
+    values:
+      image_processing: false
 
 sass:
   style: compressed
