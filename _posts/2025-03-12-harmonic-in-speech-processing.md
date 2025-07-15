@@ -3,7 +3,6 @@ layout: post
 title: Harmonic in speech processing
 date: 2025-03-12 14:00:00
 description: Understand the concept of harmonics in audio
-math: true
 tags:
 categories:
 thumbnail: assets/img/harmonic_audio/spectrogram.png
