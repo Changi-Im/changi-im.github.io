@@ -25,6 +25,12 @@ nav_order: 5
   <div class="tile">
     <img src="/assets/img/hobbies/doodle/5.jpg" alt="Sketch 5">
   </div>
+  <div class="tile">
+    <img src="/assets/img/hobbies/doodle/6.jpg" alt="Sketch 6">
+  </div>
+  <div class="tile">
+    <img src="/assets/img/hobbies/doodle/7.jpg" alt="Sketch 7">
+  </div>
 
 </div>
 
